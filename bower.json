@@ -1,0 +1,21 @@
+{
+  "name": "jisc-banner",
+  "version": "0.0.1",
+  "authors": [
+    "Mark Small <m.small@ed.ac.uk>"
+  ],
+  "description": "Jisc Banner widget",
+  "main": "client.js",
+  "keywords": [
+    "Jisc",
+    "Banner"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
