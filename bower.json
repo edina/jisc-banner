@@ -5,7 +5,7 @@
     "Mark Small <m.small@ed.ac.uk>"
   ],
   "description": "Jisc Banner widget",
-  "main": "client.js",
+  "main": "banner.js",
   "keywords": [
     "Jisc",
     "Banner"
