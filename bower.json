@@ -5,7 +5,10 @@
     "Mark Small <m.small@ed.ac.uk>"
   ],
   "description": "Jisc Banner widget",
-  "main": "banner.js",
+  "main": [
+    "banner.js",
+    "banner.css"
+  ],
   "keywords": [
     "Jisc",
     "Banner"
@@ -17,5 +20,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4"
+  }
 }

@@ -1,0 +1,26 @@
+.panel {
+  font-family: Corbel, "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.75em;
+  line-height: 1.5;
+}
+  
+.panel-body {
+  color: #2c3841;
+  background-color: #e4e9ec;
+}
+  
+.panel-default>.panel-heading {
+/*   height: 1.563em; */
+  color: #2c3841;
+  background-color: #e4e9ec;
+  border-color: #fff;
+}
+  
+.content-text {
+  font-size: .75em;
+  line-height: 1.9em;
+}
+
+.banner-link {
+  color: #00557f;
+}
