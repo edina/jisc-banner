@@ -1,6 +1,5 @@
 .panel {
   font-family: Corbel, "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
-  font-size: 1.75em;
   line-height: 1.5;
 }
   
@@ -10,10 +9,11 @@
 }
   
 .panel-default>.panel-heading {
-/*   height: 1.563em; */
   color: #2c3841;
   background-color: #e4e9ec;
   border-color: #fff;
+  font-size: 1.2em;
+  padding: 0px;
 }
   
 .content-text {
@@ -23,4 +23,8 @@
 
 .banner-link {
   color: #00557f;
+}
+
+#jisc-banner-content {
+  font-size: 1.3em;
 }
