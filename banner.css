@@ -1,14 +1,14 @@
-.panel {
+.jisc-banner .panel {
   font-family: Corbel, "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.5;
 }
   
-.panel-body {
+.jisc-banner .panel-body {
   color: #2c3841;
   background-color: #e4e9ec;
 }
   
-.panel-default>.panel-heading {
+.jisc-banner .panel-default>.panel-heading {
   color: #2c3841;
   background-color: #e4e9ec;
   border-color: #fff;
@@ -16,15 +16,15 @@
   padding: 0px;
 }
   
-.content-text {
+.jisc-banner .content-text {
   font-size: .75em;
   line-height: 1.9em;
 }
 
-.banner-link {
+.jisc-banner .banner-link {
   color: #00557f;
 }
 
-#jisc-banner-content {
+.jisc-banner #jisc-banner-content {
   font-size: 1.3em;
 }
