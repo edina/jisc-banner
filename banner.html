@@ -1,261 +1,82 @@
-<!DOCTYPE HTML>
+<!doctype html>
+
 <html>
-<head>
-<base target="_parent" />
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-<meta content="utf-8" http-equiv="encoding">
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-</head>
-<body>
-<base target="_parent" />
-<!--[if IE 6]><style type="text/css">
-body {display : none; }
-</style> IE 6<![endif]-->
-<!--[if IE 6]>
-<style type="text/css">
-body {display : none; } 
-</style><![endif]-->
-<!--[if IE 7]>
-<style type="text/css">
-body { display: none; } 
-</style><![endif]-->
-<!--[if IE 8]>
-<script>
-iefix = function(){
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
 
-document.getElementById("bannerheading").style.marginTop = "7px";
-
-};
-
-iefixoff = function(){
-
-document.getElementById("bannerheading").style.marginTop = "0px";
-
-};
-
-
-</script>
-<style type="text/css">
-.uwp-jb-banner-heading { position:relative !important; top: -7px !important; } 
-</style>
-<![endif]-->
-<!--[if gt IE 8]>
-<script>
-iefix = function(){
-
-document.getElementById("bannerheading").style.marginTop = "7px";
-
-};
-
-iefixoff = function(){
-
-document.getElementById("bannerheading").style.marginTop = "0px";
-
-};
-
-
-</script>
-<style type="text/css">
-.uwp-jb-banner-heading { position:relative !important; top: -7px !important; } 
-</style><![endif]-->
-
-<div class="uwp-jisc-banner uwp-jisc-banner-default" id="jisc-banner">
-  <div class="uwp-jb-banner-collapse uwp-jb-in uwp-jb-collapse" id="jisc-banner-body">
-    <div class="uwp-jb-banner-body">
-      <div class="uwp-jb-container" id="uwp-jb-container1">
-        <div class="uwp-jb-row">
-          <div class="uwp-jb-col-sm-8">
-            <div class="uwp-jb-about-jisc">
-              <p class="uwp-jb-thumbnail"><a href="http://www.jisc.ac.uk" target="_blank" class="uwp-jb-img uwp-jb-img-jisc-logo"><img src="logo.png" alt="Jisc" /></a></p>
-              <div class="uwp-jb-text">
-                <p>We provide secure, cost-effective access to the UK&#8217;s richest collection of <a href="http://www.jisc.ac.uk/content/" target="_blank">digital content</a>; giving you access to the latest data and content from leading international publishers and providers.</p><p><a href="http://www.jisc.ac.uk" target="_blank">Find out more at jisc.ac.uk</a></p>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./banner.css">
+  </head>
+  
+  <body>
+    <div class="jisc-banner panel-group" id="accordion">
+      <div class="panel panel-default" id="panel1">
+        <div class="panel-heading"> 
+          <span>Explore &raquo; 
+            <a class="banner-link" href="http://www.jisc.ac.uk/content" target="_blank">Digital content</a>
+          </span>
+          <a id="expandBtn" class="banner-link pull-right" data-toggle="collapse" data-target="#jisc-banner-content" href="#jisc-banner-content" name="expandBtn">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAZBAMAAABawcpVAAAAMFBMVEXsagb////2tYPtcxb62sHzoGD+9vDxj0T75NH4x6L3vpPwhjXufSX97eH50bL0q3NCA1HEAAAAtklEQVQoz2MYQLALixiToE7iBGzCyo1YhRXsGbAKA0nzAiDBXoAiLKhgIij4msEqUXAxqrCjoKA8Q6OgoASqsOB1nhhWwTfsXWjCqQYMLGIGDMzohkgEMIoAeajCloKCkqjCLCBhBtOJgryyCME1DIWCBYIKGxi4BHcKBjBUQ0RZBTsEZRkElXMnLRPjSZTUg2pgBjo4m0FQB+hkUYZtIAKqfMl7AwalAlYVpw0MzP+cDjDQFgAAAMwhlV8bOAUAAAAASUVORK5CYII="/>
+            <i id="jisc-chevron" class="glyphicon glyphicon-menu-right"></i>
+          </a> 
+        </div>
+        <div id="jisc-banner-content" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-xs-2 col-xs-offset-2">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIEAAABLBAMAAACl/fmxAAAAMFBMVEXsagb////62sHxj0T0pWntcxb2tYP+9vD97eHufSXwhjX75NH4x6L3vpP50bLymVTjIiUUAAACX0lEQVRYw+2WzWsTQRjGH0xW3VIaH43daGo19aCXQiRor+mltSAloKD4ARWlfpyMlII9CBHrQVDqf7DePLoHL3oxJxEPaqHgTXv2It4L7r4zmV1qiJPsQcH9HRLCwI953nfemSAjI+N/Y+Y60vGCfI3BOFur1U7CaZGlBgbiBMl9yDOknsYwzJC3aQwjDPn2d1M4TdJLVUlMkStIZXDXJ9dSGYTMAMwsLspwOmcC8ults3zuA3l/zsZQIfci5AaFJ7oxl5uMeG9vuETNmCjyTSoWbA1OwA6fosU2NeWGpWGEBh/AMA2vLA3PGfLgOMlStDbNiIlmlMrS8FlVzTlVKQJwpSA+3JvkQUuDfEY4UQN3RAXwVYcWLA0BOQqNyrSKiKE3tr1okePQqExVCBdhn4IbZinpszVskvQ+QpBCHu7ToNs3ruagQHJPv4bzVDyMzvROki/7NRTisVCGI/0aMEvN0qAGd5Oa+oAGuO+oOGBtuJowCFuBqgTylr1oJw2CM88QDzn2HKjkweP+2CBcYciaQ/IQ/oj0705siKNVEfR+S/PqLr0gz/52wzMxTMtlJ7jderAkmdvSuY7BbcRzXZUTWlSl+d41/yMfOE3KVrVh97LsTCZMjpTYgVn5SqJWvYkKI0YRT1b5mg/nJ8ky5O8ZS3PIfSHvYTu7GLNqDC0aihLGMPZ7IWnwfG2IB0tPZb7nbT/FDiswe2gntJK/14vjVjqLfmwomBiP1Q0bULGBLuSUolRHbEBBz+ZyQ4dVyqPoijvfojf5A4J5/beOkXe/osPQevjzFjIyMv55fgGVBJEC8XMenAAAAABJRU5ErkJggg=="/>
               </div>
-            </div>
-          </div>
-          <div class="uwp-jb-col-sm-4">
-            <div class="uwp-jb-jisc-service-hierarchy">
-              <p class="uwp-jb-breadcrumb">
-                Explore <span class="uwp-jb-breadcrumb-separator">&raquo;</span> <a href="http://www.jisc.ac.uk/content" target="_blank">Digital content</a><span class="uwp-jb-visuallyhidden">. Other services in this area:</span>
-              </p>
-              <ul class="uwp-jb-nav-list">
-                <li><a href="http://www.jisc.ac.uk/content/ejournals" target="_blank">Journals</li><li><a href="http://www.jisc.ac.uk/content/resources" target="_blank">Learning and teaching resources</li><li><a href="http://www.jisc.ac.uk/content/repositories" target="_blank">Repositories</li><li><a href="http://www.jisc.ac.uk/content/ebooks" target="_blank">e-books</li><li><a href="http://www.jisc.ac.uk/content/archives" target="_blank">Resource discovery</li><li><a href="http://www.jisc.ac.uk/content/maps" target="_blank">Maps and geospatial data</li><li><a href="http://www.jisc.ac.uk/content/film" target="_blank">Film and images</li>
-              </ul>
+              <div class="col-xs-5 pull-left"> 
+                We provide secure, cost-effective access to the UK&rsquo;s richest collection of 
+                <a class="banner-link" href="http://www.jisc.ac.uk/content" target="_blank">digital content</a>; 
+                  giving you access to the latest data and content from leading international publishers and providers.<br/><br/> 
+                <a class="banner-link" href="http://jisc.ac.uk" target="_blank">Find out more at jisc.ac.uk</a> 
+              </div>
+              <div class="col-xs-3">
+                <div class="">
+                  <ul class="nav nav-pills nav-stacked content-text">
+                    <li>
+                      <span>Explore &raquo; <a class="banner-link" href="http://www.jisc.ac.uk/content" target="_blank">Digital content</a></span>
+                    </li>
+                    <li>
+                      <span><a class="banner-link" href="http://www.jisc.ac.uk/content/ejournals" target="_blank">Journals</a></span>
+                    </li>
+                    <li>
+                      <span><a class="banner-link" href="http://www.jisc.ac.uk/content/resources" target="_blank">Learning and teachingresources</a></span>
+                    </li>
+                    <li>
+                      <span><a class="banner-link" href="http://www.jisc.ac.uk/content/repositories" target="_blank">Repositories</a></span>
+                    </li>
+                    <li>
+                      <span><a class="banner-link" href="http://www.jisc.ac.uk/content/ebooks" target="_blank">e-books</a></span>
+                    </li>
+                    <li>
+                      <span><a class="banner-link" href="http://www.jisc.ac.uk/content/archives" target="_blank">Resource discovery</a></span>
+                    </li>
+                    <li>
+                      <span><a class="banner-link" href="http://www.jisc.ac.uk/content/maps" target="_blank">Maps and geospatial data</a></span>
+                    </li>
+                    <li>
+                      <span><a class="banner-link" href="http://www.jisc.ac.uk/content/film" target="_blank">Film and images</a></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div id='bannerheading' class="uwp-jb-banner-heading">
-    <div class="uwp-jb-container" id="uwp-jb-container2">
-      <ul class="uwp-jb-list-unstyled">
-        <li class="uwp-jb-banner-service-location" id="you-are-in-row">
-          </a>Explore <span class="uwp-jb-breadcrumb-separator">&raquo;</span> <a href="http://www.jisc.ac.uk/content" target="_blank">Digital content</a>
-        </li>
-        <li class="uwp-jb-banner-brand">
-          <a href="http://www.jisc.ac.uk" target="_blank">jisc.ac.uk</a>
-        </li>
-        <li class="uwp-jb-banner-title">
-          <a target="_self" id="uwp-jb-banner-control" class="uwp-jb-banner-control uwp-jb-img" data-toggle="uwp-jb-collapse" data-parent="#jisc-banner"  href="#jisc-banner-body" title='Open/Close Jisc masthead'>
-            <span>
-              <img class="uwp-jb-img-jisc-logo" src="jisc-logo-tab.png" alt="Jisc" />
-              <span id="caret" class="uwp-jb-caret"><span class="uwp-jb-visuallyhidden">[Toggle collapse]</span></span>
-            </span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-</body>
-</html><style>/*! normalize.css v3.0.1 | MIT License | git.io/normalize */body {      overflow:hidden;  margin: 0;/* Host site conflict possible. */}.uwp-jisc-banner a {  background: transparent;}.uwp-jisc-banner a:active,.uwp-jisc-banner a:hover {  outline: 0;}.uwp-jisc-banner abbr[title] {  border-bottom: 1px dotted;}.uwp-jisc-banner b,.uwp-jisc-banner strong {  font-weight: bold;}.uwp-jisc-banner dfn {  font-style: italic;}.uwp-jisc-banner h1 {  font-size: 2em;  margin: 0.67em 0;}.uwp-jisc-banner mark {  background: #ff0;  color: #000;}.uwp-jisc-banner small {  font-size: 80%;}.uwp-jisc-banner sub,.uwp-jisc-banner sup {  font-size: 75%;  line-height: 0;  position: relative;  vertical-align: baseline;}.uwp-jisc-banner sup {  top: -0.5em;}.uwp-jisc-banner sub {  bottom: -0.25em;}.uwp-jisc-banner img {  border: 0;}.uwp-jisc-banner svg:not(:root) {  overflow: hidden;}.uwp-jisc-banner figure {  margin: 1em 40px;}.uwp-jisc-banner hr {  -moz-box-sizing: content-box;  box-sizing: content-box;  height: 0;}.uwp-jisc-banner pre {  overflow: auto;}.uwp-jisc-banner code,.uwp-jisc-banner kbd,.uwp-jisc-banner pre,.uwp-jisc-banner samp {  font-family: monospace, monospace;  font-size: 1em;}.uwp-jisc-banner button,.uwp-jisc-banner input,.uwp-jisc-banner optgroup,.uwp-jisc-banner select,.uwp-jisc-banner textarea {  color: inherit;  font: inherit;  margin: 0;}.uwp-jisc-banner button {  overflow: visible;}.uwp-jisc-banner button,.uwp-jisc-banner select {  text-transform: none;}.uwp-jisc-banner button,.uwp-jisc-banner html input[type="button"],.uwp-jisc-banner input[type="reset"],.uwp-jisc-banner input[type="submit"] {  -webkit-appearance: button;  cursor: pointer;}.uwp-jisc-banner button[disabled],.uwp-jisc-banner html input[disabled] {  cursor: default;}.uwp-jisc-banner button::-moz-focus-inner,.uwp-jisc-banner input::-moz-focus-inner {  border: 0;  padding: 0;}.uwp-jisc-banner input {  line-height: normal;}.uwp-jisc-banner input[type="checkbox"],.uwp-jisc-banner input[type="radio"] {  box-sizing: border-box;  padding: 0;}.uwp-jisc-banner input[type="number"]::-webkit-inner-spin-button,.uwp-jisc-banner input[type="number"]::-webkit-outer-spin-button {  height: auto;}.uwp-jisc-banner input[type="search"] {  -webkit-appearance: textfield;  -moz-box-sizing: content-box;  -webkit-box-sizing: content-box;  box-sizing: content-box;}.uwp-jisc-banner input[type="search"]::-webkit-search-cancel-button,.uwp-jisc-banner input[type="search"]::-webkit-search-decoration {  -webkit-appearance: none;}.uwp-jisc-banner fieldset {  border: 1px solid #c0c0c0;  margin: 0 2px;  padding: 0.35em 0.625em 0.75em;}.uwp-jisc-banner legend {  border: 0;  padding: 0;}.uwp-jisc-banner textarea {  overflow: auto;}.uwp-jisc-banner optgroup {  font-weight: bold;}.uwp-jisc-banner table {  border-collapse: collapse;  border-spacing: 0;}.uwp-jisc-banner td,.uwp-jisc-banner th {  padding: 0;}/*! Jisc: Unified Web Project: Jisc Banner */.uwp-jisc-banner {  line-height: 1.5;  color: #2c3841;  font-family: Corbel, "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;  font-size: 18px;/* Host site conflict possible if EMs or %ages used. */  text-align: left;  -ms-text-size-adjust: 100%;  -webkit-text-size-adjust: 100%;  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}.uwp-jisc-banner * {  -webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box;}.uwp-jisc-banner *:before,.uwp-jisc-banner *:after {  -webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box;}.uwp-jisc-banner a {  border-width: 0;/* Host fix. */  color: #00557f;  text-decoration: underline;}.uwp-jisc-banner a:hover,.uwp-jisc-banner a:focus {  top: 0;/* Host fix: Zetoc. */  border-width: 0;/* Host fix. */  color: #e85e13;}.uwp-jisc-banner a:focus {  outline: thin dotted;  outline: 5px auto -webkit-focus-ring-color;  border-width: 0;  text-decoration: none;}.uwp-jisc-banner abbr[title],.uwp-jisc-banner abbr[data-original-title] {  border-bottom-color: #b9c9d5;}.uwp-jisc-banner img {  vertical-align: middle;}.uwp-jisc-banner a.uwp-jb-img {  text-decoration: none;}.uwp-jisc-banner a.uwp-jb-img:hover img,.uwp-jisc-banner a.uwp-jb-img:focus img {  opacity: .7;}.uwp-jisc-banner a.uwp-jb-img:focus img {  outline-offset: 22px;}.uwp-jisc-banner p {  margin: .66666667em 0 0;}.uwp-jisc-banner ul,.uwp-jisc-banner ol {  margin: .66666667em 0 0;}.uwp-jisc-banner .uwp-jb-list-unstyled {  padding-left: 0;  list-style: none;}.uwp-jisc-banner abbr[title],.uwp-jisc-banner abbr[data-original-title] {  cursor: help;}.uwp-jisc-banner abbr[title].uwp-jb-abbr-unstyled,.uwp-jisc-banner abbr[data-original-title].uwp-jb-abbr-unstyled {  border-bottom-color: transparent;}.uwp-jisc-banner .uwp-jb-banner-body > .uwp-jb-container:before,.uwp-jisc-banner .uwp-jb-banner-body > .uwp-jb-container:after {  content: " ";  display: table;}.uwp-jisc-banner .uwp-jb-banner-body > .uwp-jb-container:after {  clear: both;}.uwp-jisc-banner .uwp-jb-banner-body > .uwp-jb-container {  width: 965px;  margin: 0 auto;  padding: 0 10px;}.uwp-jisc-banner-responsive .uwp-jb-banner-body > .uwp-jb-container {  width: 100%;}@media (min-width: 992px) {  .uwp-jisc-banner-responsive .uwp-jb-banner-body > .uwp-jb-container {    width: 965px;  }}@media (min-width: 1200px) {  .uwp-jisc-banner-responsive .uwp-jb-banner-body > .uwp-jb-container {    width: 1180px;  }}.uwp-jb-row {  margin-right: -10px;  margin-left: -10px;}.uwp-jb-col-sm-1, .uwp-jb-col-sm-2, .uwp-jb-col-sm-3, .uwp-jb-col-sm-4, .uwp-jb-col-sm-5, .uwp-jb-col-sm-6, .uwp-jb-col-sm-7, .uwp-jb-col-sm-8, .uwp-jb-col-sm-9, .uwp-jb-col-sm-10, .uwp-jb-col-sm-11, .uwp-jb-col-sm-12 {  position: relative;  min-height: 1px;  padding-right: 10px;  padding-left: 10px;}.uwp-jb-col-sm-1, .uwp-jb-col-sm-2, .uwp-jb-col-sm-3, .uwp-jb-col-sm-4, .uwp-jb-col-sm-5, .uwp-jb-col-sm-6, .uwp-jb-col-sm-7, .uwp-jb-col-sm-8, .uwp-jb-col-sm-9, .uwp-jb-col-sm-10, .uwp-jb-col-sm-11, .uwp-jb-col-sm-12 {  float: left;}.uwp-jb-col-sm-12 {  width: 100%;}.uwp-jb-col-sm-11 {  width: 91.66666667%;}.uwp-jb-col-sm-10 {  width: 83.33333333%;}.uwp-jb-col-sm-9 {  width: 75%;}.uwp-jb-col-sm-8 {  width: 66.66666667%;}.uwp-jb-col-sm-7 {  width: 58.33333333%;}.uwp-jb-col-sm-6 {  width: 50%;}.uwp-jb-col-sm-5 {  width: 41.66666667%;}.uwp-jb-col-sm-4 {  width: 33.33333333%;}.uwp-jb-col-sm-3 {  width: 25%;}.uwp-jb-col-sm-2 {  width: 16.66666667%;}.uwp-jb-col-sm-1 {  width: 8.33333333%;}@media (max-width: 756px) {  .uwp-jisc-banner-responsive .uwp-jb-col-sm-1, .uwp-jisc-banner-responsive .uwp-jb-col-sm-2, .uwp-jisc-banner-responsive .uwp-jb-col-sm-3, .uwp-jisc-banner-responsive .uwp-jb-col-sm-4, .uwp-jisc-banner-responsive .uwp-jb-col-sm-5, .uwp-jisc-banner-responsive .uwp-jb-col-sm-6, .uwp-jisc-banner-responsive .uwp-jb-col-sm-7, .uwp-jisc-banner-responsive .uwp-jb-col-sm-8, .uwp-jisc-banner-responsive .uwp-jb-col-sm-9, .uwp-jisc-banner-responsive .uwp-jb-col-sm-10, .uwp-jisc-banner-responsive .uwp-jb-col-sm-11, .uwp-jisc-banner-responsive .uwp-jb-col-sm-12 {    float: none;  }  .uwp-jisc-banner-responsive .uwp-jb-col-sm-1, .uwp-jisc-banner-responsive .uwp-jb-col-sm-2, .uwp-jisc-banner-responsive .uwp-jb-col-sm-3, .uwp-jisc-banner-responsive .uwp-jb-col-sm-4, .uwp-jisc-banner-responsive .uwp-jb-col-sm-5, .uwp-jisc-banner-responsive .uwp-jb-col-sm-6, .uwp-jisc-banner-responsive .uwp-jb-col-sm-7, .uwp-jisc-banner-responsive .uwp-jb-col-sm-8, .uwp-jisc-banner-responsive .uwp-jb-col-sm-9, .uwp-jisc-banner-responsive .uwp-jb-col-sm-10, .uwp-jisc-banner-responsive .uwp-jb-col-sm-11, .uwp-jisc-banner-responsive .uwp-jb-col-sm-12 {    width: 100%;  }}.uwp-jb-collapse {  display: none;}.uwp-jb-heightcalculator {display:block; position: absolute; visibility: none;}.uwp-jb-collapse.uwp-jb-in {  display: block;    transition: height 250ms;    overflow:hidden;}.uwp-jb-collapse.uwp-jb-collapsing {  position: relative;  display: block;  height: 0;}.uwp-jb-collapse.uwp-jb-collapsing .uwp-jb-banner-body{ display:none;    }.uwp-jb-caret {  position: relative;  display: inline-block;  width: 13px;  height: 7px;  background-image:url(caret-default.png);  background-position: 0 0;}.uwp-jisc-banner-inverse .uwp-jb-caret {     background: url(caret-inverse.png);    }.uwp-jisc-banner .uwp-jb-img-jisc-logo {  display: inline-block;  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);     -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);          box-shadow: 0 1px 2px rgba(0,0,0,0.2);}.uwp-jisc-banner .uwp-jb-nav-list {  padding-left: 0;  list-style: none;}.uwp-jisc-banner .uwp-jb-nav-list > li {  margin-top: .26666667em;  line-height: 1.2;  padding-top: .2em;  padding-bottom: .2em;  font-size: .83333333em;}@media (max-width: 756px) {  .uwp-jisc-banner-responsive .uwp-jb-nav-list {    margin-top: .55555556em;  }  .uwp-jisc-banner-responsive .uwp-jb-nav-list > li {    line-height: 1.15384615;    margin-top: .30769231em;    padding-top: .23076923em;    padding-bottom: .23076923em;    font-size: .72222222em;  }  .uwp-jisc-banner-responsive .uwp-jb-nav-list > li > a {    padding-top: .38461538em;    padding-bottom: .23076923em;  }}.uwp-jisc-banner .uwp-jb-nav-list > li > a {  text-decoration: none;}.uwp-jisc-banner .uwp-jb-nav-list > .uwp-jb-active > a {  cursor: default;}.uwp-jisc-banner .uwp-jb-breadcrumb {  line-height: 1.16666667;}.uwp-jisc-banner .uwp-jb-breadcrumb > a {  text-decoration: none;}.uwp-jisc-banner .uwp-jb-breadcrumb-separator {  color: #9ba7b0;}.uwp-jisc-banner {  border-bottom-width: 4px;  border-bottom-style: solid;  border-bottom-color: transparent;/*  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);*/}.uwp-jisc-banner .uwp-jb-banner-body {  padding: 20px 0 16px;}@media (max-width: 991px) {  .uwp-jisc-banner-responsive .uwp-jb-banner-body {    padding-top: 10px;    padding-bottom: 10px;  }}.uwp-jisc-banner .uwp-jb-about-jisc {  border-right-width: 1px;  border-right-style: solid;  padding-top: .11111111em;  padding-right: 20px;  padding-bottom: .27777778em;}@media (max-width: 756px) {  .uwp-jisc-banner-responsive .uwp-jb-about-jisc {    display: none;  }}.uwp-jisc-banner .uwp-jb-about-jisc .uwp-jb-thumbnail {  float: left;  margin-top: .44444444em;}.uwp-jisc-banner .uwp-jb-about-jisc > .uwp-jb-text {  margin-left: 152px;}.uwp-jisc-banner .uwp-jb-about-jisc > .uwp-jb-text a {  text-decoration: none;}.uwp-jisc-banner .uwp-jb-about-jisc > .uwp-jb-text > p:first-child {  margin-top: 0;}.uwp-jisc-banner .uwp-jb-jisc-service-hierarchy {  margin-left: -21px;  border-left-width: 1px;  border-left-style: solid;  padding-left: 20px;  padding-bottom: .27777778em;}#jisc-banner-body {  border-bottom-width: 1px;  border-bottom-style: solid;  border-color:#f3f4f8;}.uwp-jisc-banner-inverse #jisc-banner-body {        border-color:#2c3841;    };@media (max-width: 991px) {  .uwp-jisc-banner-responsive .uwp-jb-banner-body {            border-bottom-color:transparent;      border-bottom-width:1px;   }}.uwp-jisc-banner .uwp-jb-jisc-service-hierarchy > .uwp-jb-breadcrumb {  margin-top: .27777778em;}@media (max-width: 756px) {  .uwp-jisc-banner-responsive .uwp-jb-jisc-service-hierarchy > .uwp-jb-breadcrumb {    margin-top: .16666667em;  }}#you-are-in-row {position: relative; top:-2px;}.uwp-jisc-banner .uwp-jb-banner-heading > .uwp-jb-container {/* Host site: variable. */  position: relative;}.uwp-jisc-banner-responsive .uwp-jb-banner-heading > .uwp-jb-container {/* Host site: variable. */  padding-right: 10px;  padding-left: 10px;}.uwp-jisc-banner .uwp-jb-banner-heading:before,.uwp-jisc-banner .uwp-jb-banner-heading:after {  content: " ";  display: table;}.uwp-jisc-banner .uwp-jb-banner-heading:after {  clear: both;}.uwp-jisc-banner .uwp-jb-banner-heading > div > ul {  margin-top: 0;}.uwp-jisc-banner .uwp-jb-banner-heading .uwp-jb-banner-service-location,.uwp-jisc-banner .uwp-jb-banner-heading .uwp-jb-banner-brand {  display: none;  visibility: hidden;}.uwp-jisc-banner-row .uwp-jb-banner-heading .uwp-jb-banner-service-location,.uwp-jisc-banner-row .uwp-jb-banner-heading .uwp-jb-banner-brand {  float: left;  line-height: 1.15384615;  margin-top: .53846154em;  font-size: 13px;}.uwp-jisc-banner-row .uwp-jb-banner-heading { padding: 0 10px !important; }.uwp-jisc-banner-row .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-service-location {  display: block;  visibility: visible;}.uwp-jisc-banner-row .uwp-jb-banner-collapse.uwp-jb-in + .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-service-location {  display: none;  visibility: hidden;}@media (max-width: 991px) {/* Host site: variable? */  .uwp-jisc-banner-responsive .uwp-jb-banner-heading .uwp-jb-banner-service-location,  .uwp-jisc-banner-responsive .uwp-jb-banner-heading .uwp-jb-banner-brand {    float: left;    line-height: 1.15384615;    margin-top: .53846154em;    font-size: 13px;  }  .uwp-jisc-banner-responsive .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-service-location {    display: block;    visibility: visible;  }  .uwp-jisc-banner-responsive .uwp-jb-banner-collapse.uwp-jb-in + .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-service-location {    display: none;    visibility: hidden;  }}@media (max-width: 756px) {  .uwp-jisc-banner-responsive .uwp-jb-banner-collapse.uwp-jb-in + .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-brand {    display: block;    visibility: visible;  }}@media (max-width: 479px) {/* Host site: variable? */  .uwp-jisc-banner-responsive .uwp-jb-banner-heading .uwp-jb-banner-service-location,  .uwp-jisc-banner-responsive .uwp-jb-banner-heading .uwp-jb-banner-brand {    line-height: 1.25;    margin-top: .58333333em;    font-size: 12px;  }}.uwp-jisc-banner .uwp-jb-banner-heading .uwp-jb-banner-service-location > a,.uwp-jisc-banner .uwp-jb-banner-heading .uwp-jb-banner-brand > a {  text-decoration: none;}.uwp-jisc-banner .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title {  float: right;  line-height: 25px;}.uwp-jisc-banner .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control {  position: absolute;  z-index: 99999999999;  top: 4px;  right: 0;  z-index: 99999999;  display: inline-block;  height: 41px;  line-height: 25px;  padding: 0 40px;}.uwp-jisc-banner-row .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control {  position: relative;  top: 0;  left: 0;  height: 25px;  line-height: inherit;  padding-right: 0;  padding-left: 0;}@media (max-width: 991px) {/* Host site: variable? */  .uwp-jisc-banner-responsive .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control {    position: relative;    top: 0;    left: 0;    height: 25px;    line-height: inherit;    padding-right: 0;    padding-left: 0;  }}.uwp-jisc-banner .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control:hover,.uwp-jisc-banner .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control:focus {  outline: 0;}.uwp-jisc-banner .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control > span {  display: inline-block;  height: 41px;  padding: 8px 0;/*  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);*/}.uwp-jisc-banner-row .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control > span {  display: inline-block;  height: 25px;  padding-top: 0;  padding-bottom: 0;}@media (max-width: 991px) {/* Host site: variable? */  .uwp-jisc-banner-responsive .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control > span {    display: inline-block;    height: 25px;    padding-top: 0;    padding-bottom: 0;  }}.uwp-jisc-banner .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control > span > .uwp-jb-img-jisc-logo,.uwp-jisc-banner .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control > span > .uwp-jb-caret {  vertical-align: top;}.uwp-jisc-banner .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control > span > .uwp-jb-img-jisc-logo + .uwp-jb-caret {  top: 11px;  margin-left: 5px;}@keyframes uwp-jb-jisc-logo-tab-img-caret-alert {  from { top: 11px; }  to   { top: 16px; }}.uwp-jisc-banner .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control > span > .uwp-jb-img-jisc-logo + .uwp-jb-caret {  -webkit-animation-name: uwp-jb-jisc-logo-tab-img-caret-alert;  -webkit-animation-duration: .25s;  -webkit-animation-iteration-count: 6;  -webkit-animation-direction: alternate;  -webkit-animation-timing-function: ease-out;  -webkit-animation-fill-mode: forwards;  -webkit-animation-delay: 3s;  -moz-animation-name: uwp-jb-jisc-logo-tab-img-caret-alert;  -moz-animation-duration: .25s;  -moz-animation-iteration-count: 6;  -moz-animation-direction: alternate;  -moz-animation-timing-function: ease-out;  -moz-animation-fill-mode: forwards;  -moz-animation-delay: 3s;  -o-animation-name: uwp-jb-jisc-logo-tab-img-caret-alert;  -o-animation-duration: .25s;  -o-animation-iteration-count: 6;  -o-animation-direction: alternate;  -o-animation-timing-function: ease-out;  -o-animation-fill-mode: forwards;  -o-animation-delay: 3s;  animation-name: uwp-jb-jisc-logo-tab-img-caret-alert;  animation-duration: .25s;  animation-iteration-count: 6;  animation-direction: alternate;  animation-timing-function: ease-out;  animation-fill-mode: forwards;  animation-delay: 3s;  -webkit-transition: transform 0.35s ease;  -moz-transition: transform 0.35 ease;  -o-transition: transform 0.35 ease;  transition: transform 0.35s ease;}.uwp-jisc-banner .uwp-jb-banner-collapse.uwp-jb-in + .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control > span > .uwp-jb-img-jisc-logo + .uwp-jb-caret {  position: relative;  width: 13px;  height: 11px;  top: 9px;  left: -1px;  background: url(https://uwp-jb.jisc.ac.uk//jisc-close.png) center center no-repeat;  -webkit-animation-name: none;  -moz-animation-name: none;  -o-animation-name: none;  -animation-name: none;  -webkit-transition: none;  -moz-transition: none;  -o-transition: none;  transition: none;}.uwp-jisc-banner-default .uwp-jb-nav-list > .uwp-jb-active > a {  color: #9ba7b0;}.uwp-jisc-banner-default .uwp-jb-banner-collapse {  background-color: #e4e9ec;}.uwp-jisc-banner-default .uwp-jb-about-jisc {  border-right-color: #f3f4f8;}.uwp-jisc-banner-default .uwp-jb-jisc-service-hierarchy {  border-left-color: #f3f4f8;}.uwp-jisc-banner-row.uwp-jisc-banner-default .uwp-jb-banner-heading {  background-color: #e4e9ec;}@media (max-width: 991px) {/* Host site: variable? */  .uwp-jisc-banner-responsive.uwp-jisc-banner-default .uwp-jb-banner-heading {    background-color: #e4e9ec;  }}.uwp-jisc-banner-default .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control {/*  background: url(https://uwp-jb.jisc.ac.uk//tab-left.png) top left no-repeat;  background: url(https://uwp-jb.jisc.ac.uk//tab-left.png) top left no-repeat,     url(https://uwp-jb.jisc.ac.uk//tab-right.png) top right no-repeat;*/}.uwp-jisc-banner-default .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control > span {  background-color: #e4e9ec;  margin-right/*\**/: -25px\9;  background-color/*\**/: transparent\9;/*  background-image\*: url(https://uwp-jb.jisc.ac.uk//tab-right.png)\9;*/  background-position/*\**/: top right\9;  background-repeat/*\**/: no-repeat\9;  padding-right/*\**/: 25px\9;}.uwp-jisc-banner-default .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control > span > img.uwp-jb-img-jisc-logo {  display/*\**/: inline-block\9;  background-color/*\**/: #e4e9ec\9;}.uwp-jisc-banner-default .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control > span > span.uwp-jb-caret {  display/*\**/: inline-block\9;  background-color/*\**/: #e4e9ec\9;}.uwp-jisc-banner-inverse {  color: #fff;}.uwp-jisc-banner-inverse a {  color: #b9c9d5;}.uwp-jisc-banner-body {border-bottom-width: 0px !important;}.uwp-jisc-banner-inverse a:hover,.uwp-jisc-banner-inverse a:focus {  color: #ec6a06;}.uwp-jisc-banner-inverse .uwp-jb-breadcrumb-separator {  color: #63727c;}.uwp-jisc-banner-inverse .uwp-jb-nav-list > .uwp-jb-active > a {  color: #63727c;}.uwp-jisc-banner-inverse .uwp-jb-banner-collapse {  background-color: #0c2931;}.uwp-jisc-banner-inverse .uwp-jb-banner-body {}.uwp-jisc-banner-inverse .uwp-jb-about-jisc {  border-right-color: #2c3841;}.uwp-jisc-banner-inverse .uwp-jb-jisc-service-hierarchy {  border-left-color: #2c3841;}.uwp-jisc-banner-row.uwp-jisc-banner-inverse .uwp-jb-banner-heading {  background-color: #0c2931;}@media (max-width: 991px) {/* Host site: variable? */  .uwp-jisc-banner-responsive.uwp-jisc-banner-inverse .uwp-jb-banner-heading {    background-color: #0c2931;  }}.uwp-jisc-banner-inverse .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control {/*  background: url(https://uwp-jb.jisc.ac.uk//tab-left-inverse.png) top left no-repeat,     url(https://uwp-jb.jisc.ac.uk//tab-right-inverse.png) top right no-repeat;*/}.uwp-jisc-banner-inverse .uwp-jb-banner-heading > div > ul > .uwp-jb-banner-title > .uwp-jb-banner-control > span {  background-color: #0c2931;}.uwp-jisc-banner .uwp-jb-clearfix:before,.uwp-jisc-banner .uwp-jb-clearfix:after,.uwp-jisc-banner .uwp-jb-row:before,.uwp-jisc-banner .uwp-jb-row:after {  content: " ";  display: table;}.uwp-jisc-banner .uwp-jb-clearfix:after,.uwp-jisc-banner .uwp-jb-row:after {  clear: both;}.uwp-jisc-banner .uwp-jb-visuallyhidden {  border: 0;  clip: rect(0 0 0 0);  height: 1px;  margin: -1px;  overflow: hidden;  padding: 0;  position: absolute;  width: 1px;}</style><script>/*jslint browser:true */
-/*global data, banner, css, console */
 
-//Wrapper function for banner to avoid conflicts with other JS.
 
-(function jisc_banner() {
+    <h1>Header</h1>
+    <p>Page goes here</p>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  </body>
+</html>
 
-    "use strict";
-    
-    var rawvariables = document.location.search.replace("?", "").split("&"),
-        i,
-        variables = {},
-        banner = {},
-        container = document.getElementById("jisc-banner-body"),
-        containerheight,
-        topmargin,
-        banneron = false;
 
-    //loop through variables to get data
-    
-    for (i = 1; i < rawvariables.length; i += 1) {
-        
-        variables[rawvariables[i].split("=")[0]] = rawvariables[i].split("=")[1];
-        
-    }
-    
-    container.className += " uwp-jb-heightcalculator";
-    containerheight = container.clientHeight;
-    container.style.minHeight = containerheight;
-    container.style.maxHeight = containerheight;
-    container.className = container.className.replace("uwp-jb-heightcalculator", "");
-    
-    //Send content height to iframe's parent
-    
-    parent.postMessage("HEIGHT=" + containerheight, "*");
-    
-    window.setTimeout(function () {
-    
-        document.getElementById("jisc-banner-body").style.minHeight = containerheight;
-        document.getElementById("jisc-banner-body").style.maxHeight = containerheight;
-        
-        document.getElementById("jisc-banner-body").setAttribute("style", "max-height:" + containerheight + "px; min-height:" + containerheight + "px;");
 
-    }, 100);
-    
-    //Add the click event to the banner control
-    
-    document.getElementById("uwp-jb-banner-control").onclick = function (e) {
-        
-        if (!banneron) {
-            parent.postMessage("OPEN", "*");
-            banneron = true;
-          
-          //Internet explorer margin fix (in banner.html)
-          
-          if(typeof iefix != "undefined"){
-            
-            iefix();
-            
-          }
-            
-            
-            //Remove "you are in text" on row when banner open
-            
-            document.getElementById("you-are-in-row").style.display = "none";
-            
-            //Change caret
-            
-            document.getElementById("caret").style.backgroundPosition = "0 -59px";
-        
-        } else {
-          
-          //Internet explorer margin fix (in banner.html)
-          
-           if(typeof iefixoff != "undefined"){
-            
-            iefixoff();
-            
-          }
-            
-            parent.postMessage("CLOSE", "*");
-            banneron = false;
-            document.getElementById("you-are-in-row").style.display = "block";
-            document.getElementById("caret").style.backgroundPosition = "0 0";
-            
-        }
-        
-        if (typeof event !== "undefined" && event.preventDefault) {
-            event.preventDefault(e);
-        } else if(typeof event !== "undefined"){
-            event.returnValue = false;
-        } else {
-         
-            e.preventDefault(e);
-            
-        }
-    
-    };
 
-    //Change banner classes dependent on which theme variables we're pushing through
-    
-    if (variables.row !== "FALSE") {
-        document.getElementById("jisc-banner").className += " uwp-jisc-banner-row";
-    }
-    if (variables.responsive !== "FALSE") {
-        document.getElementById("jisc-banner").className += " uwp-jisc-banner-responsive";
-    }
-    
-    //Change container width depending on width (overwritten on responsive mode)
-    
-    if (variables.width && variables.responsive === "FALSE") {
-        
-        document.getElementById("uwp-jb-container1").style.width = variables.width;
-        document.getElementById("uwp-jb-container2").style.width = variables.width;
-        document.getElementById("uwp-jb-container1").style.margin = "auto";
-        document.getElementById("uwp-jb-container2").style.margin = "auto";
-    }
-    
-    //Responsive mode
-    
-    //Function for creating styles (via Stack Overflow - 2041495)
-
-    document.addStyle = function (str, med) {
-        var el = document.createElement('style');
-        el.type = "text/css";
-        el.media = med || 'screen';
-        if (el.styleSheet) {
-            el.styleSheet.cssText = str;
-        } else {
-            el.appendChild(document.createTextNode(str));
-        }
-        return document.getElementsByTagName('head')[0].appendChild(el);
-    };
-    
-    if (variables.responsive === "TRUE") {
-        
-        //Set auto margin
-        
-        document.getElementById("uwp-jb-container1").style.margin = "auto";
-        document.getElementById("uwp-jb-container2").style.margin = "auto";
-        
-        //Bootstrap CSS Grid
-        
-        //Extra small
-        
-        document.addStyle("#uwp-jb-container1, #uwp-jb-container2 {width:'100%'  !important}", "screen and (min-width: 300px)");
-        
-    }
-    
-    
-}());</script>
