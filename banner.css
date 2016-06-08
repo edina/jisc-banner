@@ -2,27 +2,27 @@
   font-family: Corbel, "HelveticaNeue", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.5;
 }
-  
+
 .jisc-banner .panel-body {
-  color: #2c3841;
-  background-color: #e4e9ec;
+  color: #fff;
+  background-color: #0c2931;
 }
-  
+
 .jisc-banner .panel-default>.panel-heading {
-  color: #2c3841;
-  background-color: #e4e9ec;
+  color: #fff;
+  background-color: #0c2931;
   border-color: #fff;
   font-size: 1.2em;
   padding: 0px;
 }
-  
+
 .jisc-banner .content-text {
   font-size: .75em;
   line-height: 1.9em;
 }
 
 .jisc-banner .banner-link {
-  color: #00557f;
+  color: #b9c9d5;
 }
 
 .jisc-banner #jisc-banner-content {
